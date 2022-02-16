@@ -1,9 +1,8 @@
 from dinosaur import Dinosaur
 
-
 class Herd:
     def __init__(self):
-        self.dinosaurs = [Dinosaur("tim", 25), Dinosaur("jim", 15)]
+        self.dinosaurs = [Dinosaur("Trex King", 25), Dinosaur("Ptero Fighter", 15), Dinosaur("Tri Sarah", 20)]
         pass
 
     def create_herd(self):
