@@ -25,9 +25,9 @@ class Battlefield:
             self.dino_turn(dinosaur_index, robot_index)
             self.robo_turn(robot_index, dinosaur_index)
             if self.fleet.robots[robot_index].health < 0:
-                self.fleet.robots[robot_index].health
-            if self.herd.dinosaurs[dinosaur_index].health > 0:
-                self.herd.dinosaurs[dinosaur_index].health
+                self.fleet.robots[robot_index].health = 0
+            if self.herd.dinosaurs[dinosaur_index].health < 0:
+                self.herd.dinosaurs[dinosaur_index].health = 0
             print(f"The health of the {self.herd.dinosaurs[dinosaur_index].name} is {self.herd.dinosaurs[dinosaur_index].health}.")
             print(f"The health of the {self.fleet.robots[robot_index].name} is {self.fleet.robots[robot_index].health}.")
             if (self.fleet.robots[robot_index].health <= 0 or self.herd.dinosaurs[dinosaur_index].health <= 0):
