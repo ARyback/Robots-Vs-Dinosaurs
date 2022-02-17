@@ -36,8 +36,8 @@ class Battlefield:
                 elif self.herd.dinosaurs[dinosaur_index].health == 0:
                     self.display_loss(self.fleet.robots[robot_index].name)
                 else: 
-                    print("There was an error")
-            self.battle_end()
+                    print(f"There was an error!")
+        self.battle_end()
 
     def dino_turn(self, dinosaur_index, robot_index):
         self.herd.dinosaurs[dinosaur_index].attack(self.fleet.robots[robot_index])
@@ -47,6 +47,12 @@ class Battlefield:
         self.fleet.robots[robot_index].attack(self.herd.dinosaurs[dinosaur_index])
         pass
 
+    def health_update(self, robot_index, dinosaur_index):
+        pass
+
+    def skirmish(self, robot_index, dinosaur_index):
+        pass
+
     def show_dino_opponent_options(self):
         pass
 
@@ -54,8 +60,7 @@ class Battlefield:
         pass
 
     def display_loss(self, loser):
-        print(f"{loser} has zero health and is out of the battle.")
-        pass
+        print(f"The {loser} has zero health. They are out of the battle.")
 
     def battle_end(self):
         if self.fleet.robots[0].health == 0 or self.fleet.robots[1].health  == 0 or self.fleet.robots[2].health == 0:
