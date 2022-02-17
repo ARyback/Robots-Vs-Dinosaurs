@@ -30,19 +30,14 @@ class Battlefield:
                 self.herd.dinosaurs[dinosaur_index].health = 0
             print(f"The health of the {self.herd.dinosaurs[dinosaur_index].name} is {self.herd.dinosaurs[dinosaur_index].health}.")
             print(f"The health of the {self.fleet.robots[robot_index].name} is {self.fleet.robots[robot_index].health}.")
-            if (self.fleet.robots[robot_index].health <= 0 or self.herd.dinosaurs[dinosaur_index].health <= 0):
+            if (self.fleet.robots[robot_index].health == 0 or self.herd.dinosaurs[dinosaur_index].health == 0):
                 if self.fleet.robots[robot_index].health == 0:
-                    self.display_winners(self.herd.dinosaurs[dinosaur_index].name)
+                    self.display_loss(self.herd.dinosaurs[dinosaur_index].name)
                 elif self.herd.dinosaurs[dinosaur_index].health == 0:
-                    self.display_winners(self.fleet.robots[robot_index].name)
+                    self.display_loss(self.fleet.robots[robot_index].name)
                 else: 
                     print("There was an error")
-        if self.fleet.robots[0].health == 0 or self.fleet.robots[1].health  == 0 or self.fleet.robots[2].health == 0:
-            print(f"The dinosaurs won the battle!")
-        elif self.herd.dinosaurs[0].health == 0 or self.herd.dinosaurs[1].health == 0 or self.herd.dinosaurs[2].health == 0:
-            print(f"The robots won the final battle")
-        else:
-            print("There was an error!")
+            self.battle_end()
 
     def dino_turn(self, dinosaur_index, robot_index):
         self.herd.dinosaurs[dinosaur_index].attack(self.fleet.robots[robot_index])
@@ -58,6 +53,14 @@ class Battlefield:
     def show_robo_opponent_options(self):
         pass
 
-    def display_winners(self, winner):
-        print(f"The winner is {winner}!")
+    def display_loss(self, loser):
+        print(f"{loser} has zero health and is out of the battle.")
         pass
+
+    def battle_end(self):
+        if self.fleet.robots[0].health == 0 or self.fleet.robots[1].health  == 0 or self.fleet.robots[2].health == 0:
+            print(f"The dinosaurs won the battle!")
+        elif self.herd.dinosaurs[0].health == 0 or self.herd.dinosaurs[1].health == 0 or self.herd.dinosaurs[2].health == 0:
+            print(f"The robots won the final battle")
+        else:
+            print("There was an error!")
