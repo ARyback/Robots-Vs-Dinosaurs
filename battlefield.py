@@ -1,19 +1,22 @@
 from herd import Herd
 from fleet import Fleet
+from random import randint
 
 class Battlefield:
     def __init__(self):
         self.fleet = Fleet()
         self.herd = Herd()
+        self.dinosaur_index = randint(0, 2)
+        self.robot_index = randint(0, 2)
         pass
 
     def run_game(self):
         self.display_welcome()
-        self.battle(0,0)
+        self.battle(self.dinosaur_index, self.robot_index)
         pass
 
     def display_welcome(self):
-        print("Are you ready to rumble?! Tonight we will see Dinosaurs versss Robot!")
+        print("Are you ready to rumble?! Tonight we will see Dinosaurs versus Robots!")
         print("************************************")
         pass
 
@@ -53,4 +56,3 @@ class Battlefield:
     def display_winners(self, winner):
         print(f"The winner is {winner}!")
         pass
-

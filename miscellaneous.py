@@ -24,3 +24,6 @@
 #         print(robo_chosen)
 
 #Battle while (self.fleet.robots[robot_index].health > 0 or self.herd.dinosaurs[dinosaur_index].health > 0):
+
+
+
