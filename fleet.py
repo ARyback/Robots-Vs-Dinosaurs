@@ -1,10 +1,12 @@
 from robot import Robot
+from weapon import Weapon
 
 class Fleet:
     def __init__(self):
-        self.robots = [Robot("Fredtron", "Laser", 15), Robot("Dantron", "Lightsaber", 25), Robot("Jimtron", "Flamethrower", 35)]
+        self.robots = [Robot("Fredtron"), Robot("Dantron"), Robot("Jimtron")]
         pass
 
     def create_fleet(self):
         pass
+
 
